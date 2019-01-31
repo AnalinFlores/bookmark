@@ -27,8 +27,9 @@ class BookmarksController extends AppController
 
         $this->set(compact('bookmarks'));
     }
-    public function export(){
+    public function export($limit = 100){
      $bookmarks =  $this->Bookmarks->find('all');
+     $this ->set('bookmarks', $bookmarks);
 
     }
 
